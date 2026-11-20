@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohaserei System Network (MSN) — Ecosystem Projection (2026–2032)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Kantumruy Pro', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            holo: {
+              bg: '#040814',
+              panel: '#0a1329',
+              cyan: '#22d3ee',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+              violet: '#a78bfa',
+            },
+          },
+          boxShadow: {
+            holoCard: '0 0 0 1px rgba(34, 211, 238, 0.18), 0 18px 42px -14px rgba(2, 6, 23, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
+            holoCyan: '0 0 24px rgba(34, 211, 238, 0.25)',
+            holoEmerald: '0 0 24px rgba(16, 185, 129, 0.24)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: #040814;
+      color: #f1f5f9;
+      overflow-x: hidden;
+    }
+
+    .hologram-grid {
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.14), transparent 42%),
+        radial-gradient(circle at 88% 15%, rgba(16, 185, 129, 0.12), transparent 38%),
+        radial-gradient(circle at 50% 90%, rgba(167, 139, 250, 0.08), transparent 45%),
+        linear-gradient(to right, rgba(34, 211, 238, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(34, 211, 238, 0.045) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 34px 34px, 34px 34px;
+    }
+
+    .holo-glass {
+      background: linear-gradient(155deg, rgba(13, 25, 50, 0.8) 0%, rgba(7, 14, 30, 0.9) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      box-shadow: 0 18px 40px -14px rgba(0, 0, 0, 0.88), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .holo-glass-emerald {
+      background: linear-gradient(155deg, rgba(9, 34, 40, 0.8) 0%, rgba(6, 17, 31, 0.9) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      box-shadow: 0 18px 40px -14px rgba(0, 0, 0, 0.88), inset 0 1px 0 rgba(167, 243, 208, 0.07);
+    }
+
+    input[type='range'] {
+      accent-color: #22d3ee;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(8, 16, 34, 0.75);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(34, 211, 238, 0.26);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(34, 211, 238, 0.45);
+    }
+  </style>
+</head>
+<body class="hologram-grid min-h-screen font-sans text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+  <!-- Header Bar -->
+  <header class="sticky top-0 z-30 border-b border-cyan-400/15 bg-[#040814]/85 backdrop-blur-xl">
+    <div class="mx-auto max-w-7xl px-4 py-3.5 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <!-- Brand Identity -->
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/40 bg-cyan-500/10 text-cyan-300 shadow-holoCyan">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3v18h18" />
+              <path d="M7 14l4-4 3 3 6-7" />
+              <circle cx="20" cy="6" r="2" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-sm font-bold tracking-wide text-white sm:text-base" data-i18n="brandName">
+                Mohaserei System Network
+              </span>
+              <span class="rounded-md border border-cyan-400/30 bg-cyan-500/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-cyan-300">
+                MSN PROJECTION
+              </span>
+            </div>
+            <p class="text-xs text-slate-400" data-i18n="brandSub">
+              Macro &amp; Regional Economic Forecast Across Cambodia (2026–2032)
+            </p>
+          </div>
+        </div>
+
+        <!-- Controls: Preset Scenarios, Voice Synthesis, Auto-Voice Toggle, Language -->
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="hidden items-center gap-1 rounded-xl border border-slate-700/80 bg-slate-900/85 p-1 text-xs md:flex">
+            <button type="button" data-preset="conservative" class="preset-btn rounded-lg px-2.5 py-1 font-medium transition" data-i18n="presetConservative">
+              Conservative
+            </button>
+            <button type="button" data-preset="baseline" class="preset-btn rounded-lg px-2.5 py-1 font-medium transition" data-i18n="presetBaseline">
+              Baseline
+            </button>
+            <button type="button" data-preset="accelerated" class="preset-btn rounded-lg px-2.5 py-1 font-medium transition" data-i18n="presetAccelerated">
+              Accelerated
+            </button>
+          </div>
+
+          <button
+            type="button"
+            id="speakNowBtn"
+            class="flex items-center gap-1.5 rounded-xl border border-cyan-400/35 bg-cyan-500/10 px-3 py-1.5 text-xs font-semibold text-cyan-200 transition hover:bg-cyan-500/20"
+          >
+            <svg class="h-4 w-4 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            </svg>
+            <span data-i18n="announceBtn">Announce</span>
+          </button>
+
+          <button
+            type="button"
+            id="autoVoiceBtn"
+            class="flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 font-mono text-[11px] font-semibold transition"
+            title="Toggle automated Web Speech announcement on slider updates"
+          >
+            <span id="autoVoiceDot" class="h-2 w-2 rounded-full bg-slate-500"></span>
+            <span data-i18n="autoVoiceLabel">AUTO-VOICE</span>
+          </button>
+
+          <div class="flex items-center rounded-xl border border-slate-700/80 bg-slate-900/90 p-0.5 text-xs">
+            <button type="button" data-lang="en" class="lang-btn rounded-lg px-2.5 py-1 font-medium transition">EN</button>
+            <button type="button" data-lang="km" class="lang-btn rounded-lg px-2.5 py-1 font-medium transition">ភាសាខ្មែរ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Non-blocking Notification Banner -->
+  <div
+    id="statusBanner"
+    class="pointer-events-none fixed bottom-5 right-5 z-50 flex max-w-sm flex-col gap-2"
+    aria-live="polite"
+  ></div>
+
+  <main class="mx-auto max-w-7xl space-y-6 px-4 py-6 sm:px-6 lg:px-8">
+    <!-- Hero & Terminal KPI Cards -->
+    <section class="space-y-4">
+      <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
+        <div>
+          <h1 class="text-xl font-bold tracking-tight text-white sm:text-2xl" data-i18n="heroTitle">
+            Mohaserei Ecosystem Projection Engine
+          </h1>
+          <p class="text-xs text-slate-400 sm:text-sm" data-i18n="heroSubtitle">
+            Simulate member growth across Cambodia's 25 provinces/capital, Universal Economic Score (UES), Human Capital Value (HCV), MSN Coin valuation, profit-sharing, and Layer 2 marketplace flow.
+          </p>
+        </div>
+        <button
+          type="button"
+          id="resetDefaultsBtn"
+          class="self-start rounded-xl border border-slate-700/80 bg-slate-900/80 px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:border-cyan-400/40 hover:text-white sm:self-auto"
+          data-i18n="resetDefaultsBtn"
+        >
+          Reset Parameters
+        </button>
+      </div>
+
+      <!-- 4 Terminal Horizon KPI Cards -->
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div class="holo-glass rounded-2xl p-4 sm:p-5">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold uppercase tracking-wider text-cyan-300" data-i18n="kpiMembersLabel">
+              Projected Members
+            </span>
+            <span id="kpiTargetYearBadge1" class="rounded-md bg-cyan-500/15 px-2 py-0.5 font-mono text-[11px] text-cyan-200">
+              2032
+            </span>
+          </div>
+          <div id="kpiMembersVal" class="mt-2.5 font-mono text-2xl font-bold text-white sm:text-3xl">
+            1,420,000
+          </div>
+          <p id="kpiMembersSub" class="mt-1 font-mono text-xs text-emerald-300">
+            Across 25 Provinces · 1,646 Communes
+          </p>
+        </div>
+
+        <div class="holo-glass-emerald rounded-2xl p-4 sm:p-5">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold uppercase tracking-wider text-emerald-300" data-i18n="kpiLiquidityLabel">
+              MSN Coin Liquidity
+            </span>
+            <span id="kpiTargetYearBadge2" class="rounded-md bg-emerald-500/15 px-2 py-0.5 font-mono text-[11px] text-emerald-200">
+              2032
+            </span>
+          </div>
+          <div id="kpiLiquidityVal" class="mt-2.5 font-mono text-2xl font-bold text-white sm:text-3xl">
+            $482.5M
+          </div>
+          <p id="kpiLiquiditySub" class="mt-1 font-mono text-xs text-cyan-300">
+            Unit Price: $3.40 MSN
+          </p>
+        </div>
+
+        <div class="holo-glass rounded-2xl p-4 sm:p-5">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold uppercase tracking-wider text-amber-300" data-i18n="kpiUesHcvLabel">
+              UES &amp; HCV Index
+            </span>
+            <span class="rounded-md bg-amber-500/15 px-2 py-0.5 font-mono text-[11px] text-amber-200">
+              COMPOSITE
+            </span>
+          </div>
+          <div id="kpiUesHcvVal" class="mt-2.5 font-mono text-2xl font-bold text-white sm:text-3xl">
+            894 UES
+          </div>
+          <p id="kpiUesHcvSub" class="mt-1 font-mono text-xs text-amber-200">
+            HCV Pool: $196.8M
+          </p>
+        </div>
+
+        <div class="holo-glass rounded-2xl p-4 sm:p-5">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold uppercase tracking-wider text-violet-300" data-i18n="kpiMarketplaceLabel">
+              Layer 2 Marketplace GMV
+            </span>
+            <span class="rounded-md bg-violet-500/15 px-2 py-0.5 font-mono text-[11px] text-violet-200">
+              ANNUALIZED
+            </span>
+          </div>
+          <div id="kpiMarketplaceVal" class="mt-2.5 font-mono text-2xl font-bold text-white sm:text-3xl">
+            $615.0M
+          </div>
+          <p id="kpiMarketplaceSub" class="mt-1 font-mono text-xs text-emerald-300">
+            Profit Share Dividend: $76.9M/yr
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Parameters & Primary Projection Chart -->
+    <section class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+      <!-- Parameter Controls (5 cols) -->
+      <aside class="holo-glass space-y-4 rounded-2xl p-5 sm:p-6 lg:col-span-5">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div>
+            <h2 class="text-base font-bold text-white sm:text-lg" data-i18n="controlsHeading">
+              Projection Parameters
+            </h2>
+            <p class="text-xs text-slate-400" data-i18n="controlsSub">
+              Adjust growth drivers and horizon (2026–2032).
+            </p>
+          </div>
+          <span class="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-2 py-1 font-mono text-xs text-cyan-300">
+            LIVE MODEL
+          </span>
+        </div>
+
+        <!-- Horizon Year (2026 to 2032) -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <label for="horizonSlider" class="font-medium text-slate-200" data-i18n="paramHorizon">
+              Projection Horizon Year
+            </label>
+            <span id="horizonValueLabel" class="font-mono font-bold text-cyan-300">2032</span>
+          </div>
+          <input id="horizonSlider" type="range" min="2026" max="2032" step="1" class="w-full cursor-pointer" />
+          <div class="flex justify-between font-mono text-[10px] text-slate-500">
+            <span>2026</span><span>2028</span><span>2030</span><span>2032</span>
+          </div>
+        </div>
+
+        <!-- Member Growth Rate -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <label for="memberGrowthSlider" class="font-medium text-slate-200" data-i18n="paramMemberGrowth">
+              Annual Member &amp; Commune Growth
+            </label>
+            <span id="memberGrowthValueLabel" class="font-mono font-bold text-emerald-300">42%</span>
+          </div>
+          <input id="memberGrowthSlider" type="range" min="10" max="90" step="1" class="w-full cursor-pointer" />
+        </div>
+
+        <!-- UES Score Target -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <label for="uesTargetSlider" class="font-medium text-slate-200" data-i18n="paramUesTarget">
+              Universal Economic Score (UES) Target
+            </label>
+            <span id="uesTargetValueLabel" class="font-mono font-bold text-cyan-300">894 / 1000</span>
+          </div>
+          <input id="uesTargetSlider" type="range" min="500" max="1000" step="2" class="w-full cursor-pointer" />
+        </div>
+
+        <!-- HCV Multiplier / Growth -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <label for="hcvGrowthSlider" class="font-medium text-slate-200" data-i18n="paramHcvGrowth">
+              Human Capital Value (HCV) Velocity
+            </label>
+            <span id="hcvGrowthValueLabel" class="font-mono font-bold text-emerald-300">34%</span>
+          </div>
+          <input id="hcvGrowthSlider" type="range" min="8" max="75" step="1" class="w-full cursor-pointer" />
+        </div>
+
+        <!-- MSN Coin Target Valuation -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <label for="msnPriceSlider" class="font-medium text-slate-200" data-i18n="paramMsnPrice">
+              Target MSN Coin Valuation (USD)
+            </label>
+            <span id="msnPriceValueLabel" class="font-mono font-bold text-amber-300">$3.40</span>
+          </div>
+          <input id="msnPriceSlider" type="range" min="0.50" max="15.00" step="0.10" class="w-full cursor-pointer" />
+        </div>
+
+        <!-- Profit-Sharing Allocation -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <label for="profitShareSlider" class="font-medium text-slate-200" data-i18n="paramProfitShare">
+              Member Profit-Sharing Pool Rate
+            </label>
+            <span id="profitShareValueLabel" class="font-mono font-bold text-violet-300">12.5%</span>
+          </div>
+          <input id="profitShareSlider" type="range" min="5" max="35" step="0.5" class="w-full cursor-pointer" />
+        </div>
+
+        <!-- Layer 2 Marketplace Volume Factor -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <label for="marketplaceSlider" class="font-medium text-slate-200" data-i18n="paramMarketplace">
+              Layer 2 Marketplace Monthly Flow / Member
+            </label>
+            <span id="marketplaceValueLabel" class="font-mono font-bold text-cyan-300">$48</span>
+          </div>
+          <input id="marketplaceSlider" type="range" min="10" max="180" step="2" class="w-full cursor-pointer" />
+        </div>
+      </aside>
+
+      <!-- Interactive Canvas Trajectory Chart (7 cols) -->
+      <div class="holo-glass flex flex-col justify-between rounded-2xl p-5 sm:p-6 lg:col-span-7">
+        <div class="space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
+            <div>
+              <h2 class="text-base font-bold text-white sm:text-lg" data-i18n="chartHeading">
+                Baseline vs. Projected Trajectory (2026–2032)
+              </h2>
+              <p class="text-xs text-slate-400" data-i18n="chartSub">
+                Hover or tap across the timeline to inspect year-by-year comparisons.
+              </p>
+            </div>
+
+            <!-- Metric Selector Tabs -->
+            <div class="flex flex-wrap gap-1 rounded-xl border border-slate-800 bg-slate-950/80 p-1 text-xs">
+              <button type="button" data-metric="liquidity" class="metric-tab-btn rounded-lg px-2.5 py-1 font-medium transition" data-i18n="metricLiquidity">
+                MSN Liquidity
+              </button>
+              <button type="button" data-metric="uesHcv" class="metric-tab-btn rounded-lg px-2.5 py-1 font-medium transition" data-i18n="metricUesHcv">
+                UES &amp; HCV
+              </button>
+              <button type="button" data-metric="members" class="metric-tab-btn rounded-lg px-2.5 py-1 font-medium transition" data-i18n="metricMembers">
+                Members
+              </button>
+              <button type="button" data-metric="marketplace" class="metric-tab-btn rounded-lg px-2.5 py-1 font-medium transition" data-i18n="metricMarketplace">
+                Marketplace
+              </button>
+            </div>
+          </div>
+
+          <!-- Legend -->
+          <div class="flex flex-wrap items-center gap-4 font-mono text-xs">
+            <span class="flex items-center gap-1.5 text-cyan-300">
+              <span class="h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
+              <span data-i18n="legendProjected">Projected Trajectory</span>
+            </span>
+            <span class="flex items-center gap-1.5 text-slate-400">
+              <span class="h-2.5 w-2.5 rounded-full bg-slate-500"></span>
+              <span data-i18n="legendBaseline">Conservative Baseline</span>
+            </span>
+            <span class="flex items-center gap-1.5 text-emerald-300">
+              <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+              <span data-i18n="legendSecondary">Secondary / HCV Layer</span>
+            </span>
+          </div>
+
+          <!-- Canvas Wrapper -->
+          <div class="relative w-full overflow-hidden rounded-xl border border-slate-800/90 bg-slate-950/75 p-2">
+            <canvas id="projectionCanvas" class="h-[310px] w-full sm:h-[350px]"></canvas>
+            <div
+              id="chartTooltip"
+              class="pointer-events-none fixed z-40 hidden rounded-xl border border-cyan-400/40 bg-slate-950/95 px-3 py-2 font-mono text-xs text-slate-100 shadow-2xl backdrop-blur-md"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Quick Year Readout Strip -->
+        <div id="yearStrip" class="mt-4 grid grid-cols-4 gap-2 sm:grid-cols-7">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Regional Adoption Across Cambodia's 25 Provinces/Capital -->
+    <section class="holo-glass rounded-2xl p-5 sm:p-6">
+      <div class="flex flex-col justify-between gap-4 border-b border-slate-800 pb-4 md:flex-row md:items-center">
+        <div>
+          <h2 class="text-base font-bold text-white sm:text-lg" data-i18n="regionalHeading">
+            Regional Adoption Across Cambodia's 25 Provinces &amp; Capital
+          </h2>
+          <p class="text-xs text-slate-400" data-i18n="regionalSub">
+            Select any province or Phnom Penh to inspect projected member share, active communes/sangkats, and UES readiness.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <label for="provinceSelect" class="text-xs text-slate-400" data-i18n="selectProvinceLabel">
+            Focus Province:
+          </label>
+          <select
+            id="provinceSelect"
+            class="rounded-xl border border-cyan-400/30 bg-slate-950/85 px-3 py-1.5 text-xs font-medium text-cyan-200 focus:border-cyan-400 focus:outline-none sm:text-sm"
+          >
+            <!-- Populated with all 25 provinces/capital -->
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-5 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <!-- SVG Regional Bar Visualization (7 cols) -->
+        <div class="lg:col-span-7">
+          <div class="rounded-xl border border-slate-800/90 bg-slate-950/75 p-3">
+            <div class="mb-2 flex items-center justify-between font-mono text-xs text-slate-400">
+              <span data-i18n="topProvincesChartTitle">Top Regional Member Distribution (Click a bar to focus)</span>
+              <span id="regionalTotalBadge" class="text-cyan-300">25 / 25 REGIONS</span>
+            </div>
+            <svg id="regionalSvgChart" viewBox="0 0 640 290" class="h-auto w-full select-none">
+              <!-- Rendered dynamically -->
+            </svg>
+          </div>
+        </div>
+
+        <!-- Focused Province Detail Card + All 25 Chips (5 cols) -->
+        <div class="space-y-4 lg:col-span-5">
+          <div id="provinceDetailCard" class="holo-glass-emerald rounded-xl p-4">
+            <!-- Populated dynamically -->
+          </div>
+
+          <div>
+            <div class="mb-2 font-mono text-[11px] uppercase tracking-wider text-slate-400" data-i18n="all25Label">
+              All 25 Provinces &amp; Capital
+            </div>
+            <div id="provinceChipList" class="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto pr-1">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenario Summary Table -->
+    <section class="holo-glass rounded-2xl p-5 sm:p-6">
+      <div class="flex flex-col justify-between gap-2 border-b border-slate-800 pb-4 sm:flex-row sm:items-center">
+        <div>
+          <h2 class="text-base font-bold text-white sm:text-lg" data-i18n="tableHeading">
+            Annual Projection Schedule &amp; Scenario Summary
+          </h2>
+          <p class="text-xs text-slate-400" data-i18n="tableSub">
+            Year-by-year breakdown of members, UES, HCV pool, MSN Coin liquidity, Layer 2 marketplace GMV, and profit-sharing distributions.
+          </p>
+        </div>
+        <span id="tableScenarioTag" class="rounded-lg border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 font-mono text-xs text-emerald-300">
+          HORIZON: 2026–2032
+        </span>
+      </div>
+
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full min-w-[760px] border-collapse text-left text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-slate-800 font-mono text-[11px] uppercase tracking-wider text-slate-400">
+              <th class="px-3 py-2.5" data-i18n="colYear">Year</th>
+              <th class="px-3 py-2.5" data-i18n="colMembers">Members</th>
+              <th class="px-3 py-2.5" data-i18n="colUes">UES Index</th>
+              <th class="px-3 py-2.5" data-i18n="colHcvPool">HCV Pool</th>
+              <th class="px-3 py-2.5" data-i18n="colMsnLiquidity">MSN Liquidity</th>
+              <th class="px-3 py-2.5" data-i18n="colMarketplaceGmv">Marketplace GMV</th>
+              <th class="px-3 py-2.5 text-right" data-i18n="colProfitDividend">Profit Dividend</th>
+            </tr>
+          </thead>
+          <tbody id="projectionTableBody" class="divide-y divide-slate-800/70 font-mono text-xs sm:text-[13px]">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const STORAGE_KEY = 'mohaserei_ecosystem_projection_v1';
+      const YEARS = [2026, 2027, 2028, 2029, 2030, 2031, 2032];
+
+      // Cambodia's 25 Provinces & Capital with base weight & commune/sangkat count
+      const CAMBODIA_REGIONS = [
+        { id: 'phnom-penh', en: 'Phnom Penh', km: 'រាជធានីភ្នំពេញ', weight: 0.21, communes: 105, uesBonus: 34 },
+        { id: 'siem-reap', en: 'Siem Reap', km: 'ខេត្តសៀមរាប', weight: 0.085, communes: 100, uesBonus: 16 },
+        { id: 'battambang', en: 'Battambang', km: 'ខេត្តបាត់ដំបង', weight: 0.08, communes: 103, uesBonus: 14 },
+        { id: 'kandal', en: 'Kandal', km: 'ខេត្តកណ្ដាល', weight: 0.09, communes: 127, uesBonus: 18 },
+        { id: 'kampong-cham', en: 'Kampong Cham', km: 'ខេត្តកំពង់ចាម', weight: 0.068, communes: 109, uesBonus: 12 },
+        { id: 'prey-veng', en: 'Prey Veng', km: 'ខេត្តព្រៃវែង', weight: 0.062, communes: 116, uesBonus: 10 },
+        { id: 'takeo', en: 'Takeo', km: 'ខេត្តតាកែវ', weight: 0.058, communes: 100, uesBonus: 11 },
+        { id: 'kampong-speu', en: 'Kampong Speu', km: 'ខេត្តកំពង់ស្ពឺ', weight: 0.055, communes: 87, uesBonus: 12 },
+        { id: 'banteay-meanchey', en: 'Banteay Meanchey', km: 'ខេត្តបន្ទាយមានជ័យ', weight: 0.052, communes: 65, uesBonus: 13 },
+        { id: 'tboung-khmum', en: 'Tboung Khmum', km: 'ខេត្តត្បូងឃ្មុំ', weight: 0.048, communes: 64, uesBonus: 10 },
+        { id: 'kampong-thom', en: 'Kampong Thom', km: 'ខេត្តកំពង់ធំ', weight: 0.036, communes: 81, uesBonus: 9 },
+        { id: 'kampot', en: 'Kampot', km: 'ខេត្តកំពត', weight: 0.034, communes: 93, uesBonus: 11 },
+        { id: 'kampong-chhnang', en: 'Kampong Chhnang', km: 'ខេត្តកំពង់ឆ្នាំង', weight: 0.028, communes: 70, uesBonus: 9 },
+        { id: 'pursat', en: 'Pursat', km: 'ខេត្តពោធិ៍សាត់', weight: 0.024, communes: 49, uesBonus: 8 },
+        { id: 'preah-sihanouk', en: 'Preah Sihanouk', km: 'ខេត្តព្រះសីហនុ', weight: 0.024, communes: 29, uesBonus: 15 },
+        { id: 'svay-rieng', en: 'Svay Rieng', km: 'ខេត្តស្វាយរៀង', weight: 0.022, communes: 80, uesBonus: 9 },
+        { id: 'kratie', en: 'Kratie', km: 'ខេត្តក្រចេះ', weight: 0.017, communes: 47, uesBonus: 7 },
+        { id: 'preah-vihear', en: 'Preah Vihear', km: 'ខេត្តព្រះវិហារ', weight: 0.012, communes: 51, uesBonus: 7 },
+        { id: 'oddar-meanchey', en: 'Oddar Meanchey', km: 'ខេត្តឧត្តរមានជ័យ', weight: 0.011, communes: 24, uesBonus: 7 },
+        { id: 'koh-kong', en: 'Koh Kong', km: 'ខេត្តកោះកុង', weight: 0.008, communes: 29, uesBonus: 8 },
+        { id: 'stung-treng', en: 'Stung Treng', km: 'ខេត្តស្ទឹងត្រែង', weight: 0.007, communes: 34, uesBonus: 6 },
+        { id: 'ratanakiri', en: 'Ratanakiri', km: 'ខេត្តរតនគិរី', weight: 0.007, communes: 50, uesBonus: 6 },
+        { id: 'mondulkiri', en: 'Mondulkiri', km: 'ខេត្តមណ្ឌលគិរី', weight: 0.005, communes: 21, uesBonus: 7 },
+        { id: 'pailin', en: 'Pailin', km: 'ខេត្តប៉ៃលិន', weight: 0.004, communes: 8, uesBonus: 8 },
+        { id: 'kep', en: 'Kep', km: 'ខេត្តកែប', weight: 0.003, communes: 5, uesBonus: 9 },
+      ];
+
+      const PRESETS = {
+        conservative: {
+          horizonYear: 2032,
+          memberGrowthPct: 24,
+          uesTarget: 760,
+          hcvGrowthPct: 20,
+          msnPriceUsd: 1.8,
+          profitSharePct: 9.0,
+          marketplaceMonthlyUsd: 26,
+        },
+        baseline: {
+          horizonYear: 2032,
+          memberGrowthPct: 42,
+          uesTarget: 894,
+          hcvGrowthPct: 34,
+          msnPriceUsd: 3.4,
+          profitSharePct: 12.5,
+          marketplaceMonthlyUsd: 48,
+        },
+        accelerated: {
+          horizonYear: 2032,
+          memberGrowthPct: 68,
+          uesTarget: 968,
+          hcvGrowthPct: 55,
+          msnPriceUsd: 7.6,
+          profitSharePct: 18.0,
+          marketplaceMonthlyUsd: 96,
+        },
+      };
+
+      const TRANSLATIONS = {
+        en: {
+          brandName: 'Mohaserei System Network',
+          brandSub: 'Macro & Regional Economic Forecast Across Cambodia (2026–2032)',
+          presetConservative: 'Conservative',
+          presetBaseline: 'Baseline',
+          presetAccelerated: 'Accelerated',
+          announceBtn: 'Announce',
+          autoVoiceLabel: 'AUTO-VOICE',
+          heroTitle: 'Mohaserei Ecosystem Projection Engine',
+          heroSubtitle:
+            "Simulate member growth across Cambodia's 25 provinces/capital, Universal Economic Score (UES), Human Capital Value (HCV), MSN Coin valuation, profit-sharing, and Layer 2 marketplace flow.",
+          resetDefaultsBtn: 'Reset Parameters',
+          kpiMembersLabel: 'Projected Members',
+          kpiLiquidityLabel: 'MSN Coin Liquidity',
+          kpiUesHcvLabel: 'UES & HCV Index',
+          kpiMarketplaceLabel: 'Layer 2 Marketplace GMV',
+          controlsHeading: 'Projection Parameters',
+          controlsSub: 'Adjust growth drivers and horizon (2026–2032).',
+          paramHorizon: 'Projection Horizon Year',
+          paramMemberGrowth: 'Annual Member & Commune Growth',
+          paramUesTarget: 'Universal Economic Score (UES) Target',
+          paramHcvGrowth: 'Human Capital Value (HCV) Velocity',
+          paramMsnPrice: 'Target MSN Coin Valuation (USD)',
+          paramProfitShare: 'Member Profit-Sharing Pool Rate',
+          paramMarketplace: 'Layer 2 Marketplace Monthly Flow / Member',
+          chartHeading: 'Baseline vs. Projected Trajectory (2026–2032)',
+          chartSub: 'Hover or tap across the timeline to inspect year-by-year comparisons.',
+          metricLiquidity: 'MSN Liquidity',
+          metricUesHcv: 'UES & HCV',
+          metricMembers: 'Members',
+          metricMarketplace: 'Marketplace',
+          legendProjected: 'Projected Trajectory',
+          legendBaseline: 'Conservative Baseline',
+          legendSecondary: 'Secondary / HCV Layer',
+          regionalHeading: "Regional Adoption Across Cambodia's 25 Provinces & Capital",
+          regionalSub: 'Select any province or Phnom Penh to inspect projected member share, active communes/sangkats, and UES readiness.',
+          selectProvinceLabel: 'Focus Province:',
+          topProvincesChartTitle: 'Top Regional Member Distribution (Click a bar to focus)',
+          all25Label: 'All 25 Provinces & Capital',
+          tableHeading: 'Annual Projection Schedule & Scenario Summary',
+          tableSub:
+            'Year-by-year breakdown of members, UES, HCV pool, MSN Coin liquidity, Layer 2 marketplace GMV, and profit-sharing distributions.',
+          colYear: 'Year',
+          colMembers: 'Members',
+          colUes: 'UES Index',
+          colHcvPool: 'HCV Pool',
+          colMsnLiquidity: 'MSN Liquidity',
+          colMarketplaceGmv: 'Marketplace GMV',
+          colProfitDividend: 'Profit Dividend',
+        },
+        km: {
+          brandName: 'បណ្តាញប្រព័ន្ធមហាសេរី',
+          brandSub: 'ការព្យាករសេដ្ឋកិច្ច និងតំបន់ទូទាំងកម្ពុជា (២០២៦–២០៣២)',
+          presetConservative: 'ប្រុងប្រយ័ត្ន',
+          presetBaseline: 'មូលដ្ឋាន',
+          presetAccelerated: 'ពន្លឿនល្បឿន',
+          announceBtn: 'ប្រកាសសំឡេង',
+          autoVoiceLabel: 'សំឡេងស្វ័យប្រវត្តិ',
+          heroTitle: 'ម៉ាស៊ីនព្យាករប្រព័ន្ធអេកូឡូស៊ីមហាសេរី',
+          heroSubtitle:
+            'ក្លែងធ្វើកំណើនសមាជិកនៅ២៥រាជធានី-ខេត្ត ពិន្ទុសេដ្ឋកិច្ចសកល (UES) តម្លៃមូលធនមនុស្ស (HCV) តម្លៃ MSN Coin ការចែករំលែកប្រាក់ចំណេញ និងទីផ្សារ Layer 2។',
+          resetDefaultsBtn: 'កំណត់ឡើងវិញ',
+          kpiMembersLabel: 'សមាជិកព្យាករ',
+          kpiLiquidityLabel: 'សាច់ប្រាក់ MSN Coin',
+          kpiUesHcvLabel: 'សន្ទស្សន៍ UES & HCV',
+          kpiMarketplaceLabel: 'ទំហំទីផ្សារ Layer 2',
+          controlsHeading: 'ប៉ារ៉ាម៉ែត្រព្យាករ',
+          controlsSub: 'កែតម្រូវកត្តាកំណើន និងឆ្នាំគោលដៅ (២០២៦–២០៣២)។',
+          paramHorizon: 'ឆ្នាំគោលដៅព្យាករ',
+          paramMemberGrowth: 'កំណើនសមាជិក និងឃុំ/សង្កាត់ប្រចាំឆ្នាំ',
+          paramUesTarget: 'គោលដៅពិន្ទុសេដ្ឋកិច្ចសកល (UES)',
+          paramHcvGrowth: 'ល្បឿនតម្លៃមូលធនមនុស្ស (HCV)',
+          paramMsnPrice: 'តម្លៃគោលដៅ MSN Coin (USD)',
+          paramProfitShare: 'អត្រាបែងចែកប្រាក់ចំណេញជូនសមាជិក',
+          paramMarketplace: 'ចរាចរទីផ្សារ Layer 2 ប្រចាំខែ / សមាជិក',
+          chartHeading: 'ខ្សែកោងមូលដ្ឋាន ធៀបនឹងការព្យាករ (២០២៦–២០៣២)',
+          chartSub: 'ដាក់កស្ស័រ ឬចុចលើក្រាហ្វដើម្បីពិនិត្យទិន្នន័យតាមឆ្នាំ។',
+          metricLiquidity: 'សាច់ប្រាក់ MSN',
+          metricUesHcv: 'UES & HCV',
+          metricMembers: 'សមាជិក',
+          metricMarketplace: 'ទីផ្សារ',
+          legendProjected: 'គន្លងព្យាករ',
+          legendBaseline: 'គន្លងមូលដ្ឋានប្រុងប្រយ័ត្ន',
+          legendSecondary: 'ស្រទាប់បន្ថែម / HCV',
+          regionalHeading: 'ការទទួលយកតាមតំបន់នៅ២៥រាជធានី-ខេត្តកម្ពុជា',
+          regionalSub: 'ជ្រើសរើសរាជធានី ឬខេត្តណាមួយដើម្បីមើលសមាមាត្រសមាជិក ឃុំ/សង្កាត់សកម្ម និងពិន្ទុ UES។',
+          selectProvinceLabel: 'ជ្រើសរើសខេត្ត/ក្រុង៖',
+          topProvincesChartTitle: 'ការចែកចាយសមាជិកតាមតំបន់កំពូល (ចុចលើរបារដើម្បីផ្តោត)',
+          all25Label: 'រាជធានី និងខេត្តទាំង២៥',
+          tableHeading: 'តារាងព្យាករប្រចាំឆ្នាំ និងសង្ខេបសេណារីយ៉ូ',
+          tableSub:
+            'បែងចែកតាមឆ្នាំសម្រាប់សមាជិក UES មូលនិធិ HCV សាច់ប្រាក់ MSN Coin ទំហំទីផ្សារ Layer 2 និងប្រាក់ចំណេញបែងចែក។',
+          colYear: 'ឆ្នាំ',
+          colMembers: 'សមាជិក',
+          colUes: 'សន្ទស្សន៍ UES',
+          colHcvPool: 'មូលនិធិ HCV',
+          colMsnLiquidity: 'សាច់ប្រាក់ MSN',
+          colMarketplaceGmv: 'ទីផ្សារ GMV',
+          colProfitDividend: 'ប្រាក់ចំណេញបែងចែក',
+        },
+      };
+
+      const DEFAULT_STATE = {
+        lang: 'en',
+        preset: 'baseline',
+        autoVoice: false,
+        activeMetric: 'liquidity',
+        selectedProvinceId: 'phnom-penh',
+        params: { ...PRESETS.baseline },
+      };
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return structuredClone(DEFAULT_STATE);
+          const parsed = JSON.parse(raw);
+          return {
+            ...structuredClone(DEFAULT_STATE),
+            ...parsed,
+            params: {
+              ...structuredClone(PRESETS.baseline),
+              ...(parsed.params || {}),
+            },
+          };
+        } catch (err) {
+          console.warn('Mohaserei projection state load fallback:', err);
+          return structuredClone(DEFAULT_STATE);
+        }
+      }
+
+      let state = loadState();
+
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (err) {
+          console.warn('Mohaserei projection state save warning:', err);
+        }
+      }
+
+      function notify(msg, tone = 'cyan') {
+        const container = document.getElementById('statusBanner');
+        if (!container) return;
+        const el = document.createElement('div');
+        const palette =
+          tone === 'emerald'
+            ? 'border-emerald-400/40 bg-emerald-950/90 text-emerald-200'
+            : 'border-cyan-400/40 bg-slate-900/95 text-cyan-100';
+        el.className = `pointer-events-auto rounded-xl border px-4 py-2.5 text-xs font-medium shadow-xl backdrop-blur-md transition duration-300 ${palette}`;
+        el.textContent = msg;
+        container.appendChild(el);
+        setTimeout(() => {
+          el.style.opacity = '0';
+          setTimeout(() => el.remove(), 250);
+        }, 2800);
+      }
+
+      function formatCompactUsd(val) {
+        if (val >= 1e9) return `$${(val / 1e9).toFixed(2)}B`;
+        if (val >= 1e6) return `$${(val / 1e6).toFixed(1)}M`;
+        if (val >= 1e3) return `$${(val / 1e3).toFixed(1)}K`;
+        return `$${val.toFixed(2)}`;
+      }
+
+      function formatInt(val) {
+        return Math.round(val || 0).toLocaleString('en-US');
+      }
+
+      /**
+       * Computes year-by-year projection series from 2026 through 2032
+       * based on interactive parameters and conservative baseline reference.
+       */
+      function computeProjectionSeries() {
+        const p = state.params;
+        const baseMembers2026 = 85000;
+        const baseUes2026 = 665;
+        const baseMsnCoins2026 = 18500000;
+        const baseMsnPrice2026 = 0.65;
+        const baseHcvPool2026 = 9200000;
+
+        const gRate = p.memberGrowthPct / 100;
+        const hcvRate = p.hcvGrowthPct / 100;
+        const baseRate = 0.22;
+
+        return YEARS.map((year, idx) => {
+          const members = Math.round(baseMembers2026 * Math.pow(1 + gRate, idx));
+          const baselineMembers = Math.round(baseMembers2026 * Math.pow(1 + baseRate, idx));
+
+          const progress = idx / (YEARS.length - 1);
+          const ues = Math.round(baseUes2026 + (p.uesTarget - baseUes2026) * Math.pow(progress, 0.85));
+          const baselineUes = Math.round(baseUes2026 + (740 - baseUes2026) * progress);
+
+          const msnCoins = Math.round(baseMsnCoins2026 * Math.pow(1 + gRate * 0.78, idx));
+          const msnPrice = baseMsnPrice2026 + (p.msnPriceUsd - baseMsnPrice2026) * Math.pow(progress, 1.1);
+          const msnLiquidity = msnCoins * msnPrice;
+
+          const baselineCoins = Math.round(baseMsnCoins2026 * Math.pow(1 + baseRate * 0.7, idx));
+          const baselinePrice = baseMsnPrice2026 + (1.6 - baseMsnPrice2026) * progress;
+          const baselineLiquidity = baselineCoins * baselinePrice;
+
+          const hcvPool = baseHcvPool2026 * Math.pow(1 + hcvRate, idx) * (ues / 700);
+          const baselineHcvPool = baseHcvPool2026 * Math.pow(1 + 0.18, idx);
+
+          const marketplaceGmv = members * p.marketplaceMonthlyUsd * 12;
+          const baselineMarketplaceGmv = baselineMembers * 24 * 12;
+
+          const profitDividend = marketplaceGmv * (p.profitSharePct / 100);
+          const baselineProfitDividend = baselineMarketplaceGmv * 0.08;
+
+          return {
+            year,
+            members,
+            baselineMembers,
+            ues,
+            baselineUes,
+            msnCoins,
+            msnPrice,
+            msnLiquidity,
+            baselineLiquidity,
+            hcvPool,
+            baselineHcvPool,
+            marketplaceGmv,
+            baselineMarketplaceGmv,
+            profitDividend,
+            baselineProfitDividend,
+          };
+        });
+      }
+
+      function computeRegionalBreakdown(targetYearRow) {
+        const totalMembers = targetYearRow.members;
+        const growthBoost = (state.params.memberGrowthPct - 20) / 140;
+
+        return CAMBODIA_REGIONS.map((reg, index) => {
+          const regionalFactor = 1 + Math.sin(index * 0.75) * growthBoost * 0.35;
+          const rawShare = reg.weight * regionalFactor;
+          return {
+            ...reg,
+            rawShare,
+            members: Math.round(totalMembers * rawShare),
+            activeCommunes: Math.min(
+              reg.communes,
+              Math.max(3, Math.round(reg.communes * Math.min(1, 0.35 + (targetYearRow.year - 2026) * 0.11)))
+            ),
+            regionalUes: Math.min(1000, targetYearRow.ues + Math.round((reg.uesBonus - 12) * 0.7)),
+          };
+        }).map((item, _, arr) => {
+          const sumRaw = arr.reduce((acc, x) => acc + x.rawShare, 0) || 1;
+          const sharePct = (item.rawShare / sumRaw) * 100;
+          return {
+            ...item,
+            sharePct,
+            members: Math.round(totalMembers * (item.rawShare / sumRaw)),
+          };
+        });
+      }
+
+      function applyTranslations() {
+        const dict = TRANSLATIONS[state.lang] || TRANSLATIONS.en;
+        document.documentElement.lang = state.lang === 'km' ? 'km' : 'en';
+
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key]) el.textContent = dict[key];
+        });
+
+        document.querySelectorAll('.lang-btn').forEach((btn) => {
+          const active = btn.getAttribute('data-lang') === state.lang;
+          btn.className = `lang-btn rounded-lg px-2.5 py-1 font-medium transition ${
+            active
+              ? 'border border-cyan-400/40 bg-cyan-500/25 text-cyan-200'
+              : 'border border-transparent text-slate-400 hover:text-white'
+          }`;
+        });
+
+        document.querySelectorAll('.preset-btn').forEach((btn) => {
+          const active = btn.getAttribute('data-preset') === state.preset;
+          btn.className = `preset-btn rounded-lg px-2.5 py-1 font-medium transition ${
+            active
+              ? 'bg-emerald-500/25 text-emerald-200 border border-emerald-400/40'
+              : 'text-slate-400 hover:text-white border border-transparent'
+          }`;
+        });
+
+        const autoDot = document.getElementById('autoVoiceDot');
+        const autoBtn = document.getElementById('autoVoiceBtn');
+        if (state.autoVoice) {
+          autoBtn.className =
+            'flex items-center gap-1.5 rounded-xl border border-emerald-400/45 bg-emerald-500/15 px-2.5 py-1.5 font-mono text-[11px] font-semibold text-emerald-200 transition';
+          autoDot.className = 'h-2 w-2 rounded-full bg-emerald-400';
+        } else {
+          autoBtn.className =
+            'flex items-center gap-1.5 rounded-xl border border-slate-700/80 bg-slate-900/80 px-2.5 py-1.5 font-mono text-[11px] font-semibold text-slate-400 transition hover:text-white';
+          autoDot.className = 'h-2 w-2 rounded-full bg-slate-500';
+        }
+      }
+
+      function syncSliderLabels() {
+        const p = state.params;
+        document.getElementById('horizonSlider').value = p.horizonYear;
+        document.getElementById('horizonValueLabel').textContent = String(p.horizonYear);
+
+        document.getElementById('memberGrowthSlider').value = p.memberGrowthPct;
+        document.getElementById('memberGrowthValueLabel').textContent = `${p.memberGrowthPct}%`;
+
+        document.getElementById('uesTargetSlider').value = p.uesTarget;
+        document.getElementById('uesTargetValueLabel').textContent = `${p.uesTarget} / 1000`;
+
+        document.getElementById('hcvGrowthSlider').value = p.hcvGrowthPct;
+        document.getElementById('hcvGrowthValueLabel').textContent = `${p.hcvGrowthPct}%`;
+
+        document.getElementById('msnPriceSlider').value = p.msnPriceUsd.toFixed(2);
+        document.getElementById('msnPriceValueLabel').textContent = `$${p.msnPriceUsd.toFixed(2)}`;
+
+        document.getElementById('profitShareSlider').value = p.profitSharePct.toFixed(1);
+        document.getElementById('profitShareValueLabel').textContent = `${p.profitSharePct.toFixed(1)}%`;
+
+        document.getElementById('marketplaceSlider').value = p.marketplaceMonthlyUsd;
+        document.getElementById('marketplaceValueLabel').textContent = `$${p.marketplaceMonthlyUsd}`;
+      }
+
+      function renderAll(series) {
+        const targetRow = series.find((r) => r.year === state.params.horizonYear) || series[series.length - 1];
+        const totalCommunes = CAMBODIA_REGIONS.reduce((acc, r) => acc + r.communes, 0);
+
+        // KPI cards
+        document.getElementById('kpiTargetYearBadge1').textContent = String(targetRow.year);
+        document.getElementById('kpiTargetYearBadge2').textContent = String(targetRow.year);
+        document.getElementById('kpiMembersVal').textContent = formatInt(targetRow.members);
+        document.getElementById('kpiMembersSub').textContent =
+          state.lang === 'km'
+            ? `២៥ រាជធានី-ខេត្ត · ${formatInt(totalCommunes)} ឃុំ/សង្កាត់`
+            : `25 Provinces/Capital · ${formatInt(totalCommunes)} Communes`;
+
+        document.getElementById('kpiLiquidityVal').textContent = formatCompactUsd(targetRow.msnLiquidity);
+        document.getElementById('kpiLiquiditySub').textContent = `MSN Unit: $${targetRow.msnPrice.toFixed(2)}`;
+
+        document.getElementById('kpiUesHcvVal').textContent = `${targetRow.ues} UES`;
+        document.getElementById('kpiUesHcvSub').textContent = `HCV Pool: ${formatCompactUsd(targetRow.hcvPool)}`;
+
+        document.getElementById('kpiMarketplaceVal').textContent = formatCompactUsd(targetRow.marketplaceGmv);
+        document.getElementById('kpiMarketplaceSub').textContent =
+          state.lang === 'km'
+            ? `ចំណែកប្រាក់ចំណេញ៖ ${formatCompactUsd(targetRow.profitDividend)}/ឆ្នាំ`
+            : `Profit Dividend: ${formatCompactUsd(targetRow.profitDividend)}/yr`;
+
+        // Metric tabs
+        document.querySelectorAll('.metric-tab-btn').forEach((btn) => {
+          const active = btn.getAttribute('data-metric') === state.activeMetric;
+          btn.className = `metric-tab-btn rounded-lg px-2.5 py-1 font-medium transition ${
+            active ? 'bg-cyan-500/25 text-cyan-200' : 'text-slate-400 hover:text-white'
+          }`;
+        });
+
+        // Year strip
+        const strip = document.getElementById('yearStrip');
+        strip.innerHTML = '';
+        series.forEach((row) => {
+          const isTarget = row.year === state.params.horizonYear;
+          const cell = document.createElement('button');
+          cell.type = 'button';
+          cell.className = `rounded-xl border px-2.5 py-2 text-left transition ${
+            isTarget
+              ? 'border-cyan-400/50 bg-cyan-500/15 text-white'
+              : 'border-slate-800/90 bg-slate-950/60 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+          }`;
+          cell.innerHTML = `
+            <div class="font-mono text-[11px] font-bold ${isTarget ? 'text-cyan-300' : 'text-slate-300'}">${row.year}</div>
+            <div class="mt-0.5 truncate font-mono text-[11px]">${formatCompactUsd(row.msnLiquidity)}</div>
+          `;
+          cell.addEventListener('click', () => {
+            state.params.horizonYear = row.year;
+            state.preset = 'baseline';
+            saveState();
+            syncSliderLabels();
+            renderAll(computeProjectionSeries());
+          });
+          strip.appendChild(cell);
+        });
+
+        // Regional breakdown & schedule table
+        const regions = computeRegionalBreakdown(targetRow);
+        renderRegionalSection(regions, targetRow);
+        renderScheduleTable(series);
+        drawProjectionCanvas(series);
+      }
+
+      function renderRegionalSection(regions, targetRow) {
+        const select = document.getElementById('provinceSelect');
+        const chipList = document.getElementById('provinceChipList');
+        const detailCard = document.getElementById('provinceDetailCard');
+        const svgChart = document.getElementById('regionalSvgChart');
+
+        const currentSelected = regions.find((r) => r.id === state.selectedProvinceId) || regions[0];
+        state.selectedProvinceId = currentSelected.id;
+
+        // Populate select dropdown while preserving selection
+        select.innerHTML = '';
+        regions.forEach((r) => {
+          const opt = document.createElement('option');
+          opt.value = r.id;
+          opt.textContent = state.lang === 'km' ? `${r.km} (${r.en})` : `${r.en} — ${r.km}`;
+          opt.selected = r.id === currentSelected.id;
+          select.appendChild(opt);
+        });
+
+        // Chips
+        chipList.innerHTML = '';
+        regions.forEach((r) => {
+          const active = r.id === currentSelected.id;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = `rounded-lg border px-2 py-1 text-[11px] font-medium transition ${
+            active
+              ? 'border-emerald-400/50 bg-emerald-500/20 text-emerald-200'
+              : 'border-slate-800 bg-slate-950/75 text-slate-300 hover:border-cyan-400/35 hover:text-white'
+          }`;
+          btn.textContent = state.lang === 'km' ? r.km : r.en;
+          btn.addEventListener('click', () => {
+            state.selectedProvinceId = r.id;
+            saveState();
+            renderRegionalSection(regions, targetRow);
+          });
+          chipList.appendChild(btn);
+        });
+
+        // Focused province detail card
+        detailCard.innerHTML = `
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <span class="font-mono text-[11px] uppercase tracking-wider text-emerald-300">${targetRow.year} REGIONAL FOCUS</span>
+              <h3 class="mt-0.5 text-lg font-bold text-white">${state.lang === 'km' ? currentSelected.km : currentSelected.en}</h3>
+              <p class="text-xs text-slate-300">${state.lang === 'km' ? currentSelected.en : currentSelected.km}</p>
+            </div>
+            <span class="rounded-lg border border-cyan-400/30 bg-cyan-500/15 px-2.5 py-1 font-mono text-xs font-bold text-cyan-300">
+              ${currentSelected.sharePct.toFixed(1)}%
+            </span>
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-2.5 font-mono text-xs">
+            <div class="rounded-lg border border-slate-800/90 bg-slate-950/70 p-2.5">
+              <div class="text-[10px] text-slate-400">${state.lang === 'km' ? 'សមាជិក' : 'MEMBERS'}</div>
+              <div class="mt-0.5 font-bold text-white">${formatInt(currentSelected.members)}</div>
+            </div>
+            <div class="rounded-lg border border-slate-800/90 bg-slate-950/70 p-2.5">
+              <div class="text-[10px] text-slate-400">${state.lang === 'km' ? 'ឃុំ/សង្កាត់' : 'COMMUNES'}</div>
+              <div class="mt-0.5 font-bold text-emerald-300">${currentSelected.activeCommunes}/${currentSelected.communes}</div>
+            </div>
+            <div class="rounded-lg border border-slate-800/90 bg-slate-950/70 p-2.5">
+              <div class="text-[10px] text-slate-400">UES INDEX</div>
+              <div class="mt-0.5 font-bold text-cyan-300">${currentSelected.regionalUes}</div>
+            </div>
+          </div>
+        `;
+
+        // SVG Top 10 Horizontal Bar Chart
+        const top10 = [...regions].sort((a, b) => b.members - a.members).slice(0, 10);
+        const maxVal = Math.max(...top10.map((x) => x.members), 1);
+        svgChart.innerHTML = '';
+
+        top10.forEach((item, idx) => {
+          const y = 12 + idx * 27;
+          const barMaxW = 365;
+          const barW = Math.max(12, (item.members / maxVal) * barMaxW);
+          const isSelected = item.id === currentSelected.id;
+
+          const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          group.setAttribute('class', 'cursor-pointer');
+          group.addEventListener('click', () => {
+            state.selectedProvinceId = item.id;
+            saveState();
+            renderRegionalSection(regions, targetRow);
+          });
+
+          const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          label.setAttribute('x', '8');
+          label.setAttribute('y', String(y + 13));
+          label.setAttribute('fill', isSelected ? '#67e8f9' : '#cbd5e1');
+          label.setAttribute('font-size', '11.5');
+          label.setAttribute('font-weight', isSelected ? '700' : '500');
+          label.textContent = state.lang === 'km' ? item.km : item.en;
+
+          const track = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          track.setAttribute('x', '165');
+          track.setAttribute('y', String(y + 2));
+          track.setAttribute('width', String(barMaxW));
+          track.setAttribute('height', '15');
+          track.setAttribute('rx', '6');
+          track.setAttribute('fill', 'rgba(15, 23, 42, 0.9)');
+
+          const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          bar.setAttribute('x', '165');
+          bar.setAttribute('y', String(y + 2));
+          bar.setAttribute('width', barW.toFixed(1));
+          bar.setAttribute('height', '15');
+          bar.setAttribute('rx', '6');
+          bar.setAttribute('fill', isSelected ? '#10b981' : '#22d3ee');
+          bar.setAttribute('fill-opacity', isSelected ? '0.95' : '0.72');
+
+          const valText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          valText.setAttribute('x', String(165 + barMaxW + 10));
+          valText.setAttribute('y', String(y + 13));
+          valText.setAttribute('fill', isSelected ? '#6ee7b7' : '#94a3b8');
+          valText.setAttribute('font-size', '11');
+          valText.setAttribute('font-family', 'JetBrains Mono, monospace');
+          valText.textContent = `${(item.members / 1000).toFixed(1)}k`;
+
+          group.appendChild(label);
+          group.appendChild(track);
+          group.appendChild(bar);
+          group.appendChild(valText);
+          svgChart.appendChild(group);
+        });
+      }
+
+      function renderScheduleTable(series) {
+        const tbody = document.getElementById('projectionTableBody');
+        tbody.innerHTML = '';
+
+        document.getElementById('tableScenarioTag').textContent =
+          `HORIZON: 2026–${state.params.horizonYear} · PROFIT SHARE ${state.params.profitSharePct.toFixed(1)}%`;
+
+        series.forEach((row) => {
+          const isHorizon = row.year === state.params.horizonYear;
+          const tr = document.createElement('tr');
+          tr.className = isHorizon
+            ? 'bg-cyan-500/10 text-white'
+            : 'text-slate-300 transition hover:bg-slate-800/40';
+
+          tr.innerHTML = `
+            <td class="px-3 py-3 font-bold ${isHorizon ? 'text-cyan-300' : 'text-white'}">
+              ${row.year} ${isHorizon ? '★' : ''}
+            </td>
+            <td class="px-3 py-3">${formatInt(row.members)}</td>
+            <td class="px-3 py-3 text-cyan-300">${row.ues}</td>
+            <td class="px-3 py-3 text-emerald-300">${formatCompactUsd(row.hcvPool)}</td>
+            <td class="px-3 py-3 font-semibold text-white">${formatCompactUsd(row.msnLiquidity)}</td>
+            <td class="px-3 py-3 text-violet-300">${formatCompactUsd(row.marketplaceGmv)}</td>
+            <td class="px-3 py-3 text-right font-semibold text-amber-300">${formatCompactUsd(row.profitDividend)}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Interactive HTML5 Canvas Chart Renderer
+      let canvasPointsMeta = [];
+
+      function drawProjectionCanvas(series) {
+        const canvas = document.getElementById('projectionCanvas');
+        if (!canvas) return;
+        const rect = canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        const width = Math.max(300, rect.width);
+        const height = Math.max(240, rect.height);
+
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+
+        const ctx = canvas.getContext('2d');
+        ctx.scale(dpr, dpr);
+        ctx.clearRect(0, 0, width, height);
+
+        const padLeft = 58;
+        const padRight = 22;
+        const padTop = 22;
+        const padBottom = 36;
+        const plotW = Math.max(80, width - padLeft - padRight);
+        const plotH = Math.max(80, height - padTop - padBottom);
+
+        // Extract series values for active metric
+        let projArr = [];
+        let baseArr = [];
+        let secArr = [];
+        let formatter = formatCompactUsd;
+
+        if (state.activeMetric === 'uesHcv') {
+          projArr = series.map((d) => d.ues);
+          baseArr = series.map((d) => d.baselineUes);
+          secArr = series.map((d) => Math.min(1000, Math.round(d.hcvPool / 250000)));
+          formatter = (v) => `${Math.round(v)}`;
+        } else if (state.activeMetric === 'members') {
+          projArr = series.map((d) => d.members);
+          baseArr = series.map((d) => d.baselineMembers);
+          formatter = (v) => (v >= 1e6 ? `${(v / 1e6).toFixed(2)}M` : `${Math.round(v / 1000)}k`);
+        } else if (state.activeMetric === 'marketplace') {
+          projArr = series.map((d) => d.marketplaceGmv);
+          baseArr = series.map((d) => d.baselineMarketplaceGmv);
+          secArr = series.map((d) => d.profitDividend);
+          formatter = formatCompactUsd;
+        } else {
+          // Default: MSN Coin Liquidity
+          projArr = series.map((d) => d.msnLiquidity);
+          baseArr = series.map((d) => d.baselineLiquidity);
+          secArr = series.map((d) => d.hcvPool);
+          formatter = formatCompactUsd;
+        }
+
+        const allVals = [...projArr, ...baseArr, ...secArr];
+        const minVal = 0;
+        const maxVal = Math.max(...allVals, 1) * 1.12;
+
+        // Horizontal grid lines & Y-axis labels
+        ctx.font = '11px "JetBrains Mono", monospace';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        const ticks = 4;
+        for (let i = 0; i <= ticks; i++) {
+          const ratio = i / ticks;
+          const y = padTop + plotH - ratio * plotH;
+          const val = minVal + ratio * (maxVal - minVal);
+
+          ctx.strokeStyle = 'rgba(148, 163, 184, 0.14)';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(padLeft, y);
+          ctx.lineTo(padLeft + plotW, y);
+          ctx.stroke();
+
+          ctx.fillStyle = '#94a3b8';
+          ctx.fillText(formatter(val), padLeft - 8, y);
+        }
+
+        const stepX = series.length > 1 ? plotW / (series.length - 1) : plotW;
+        canvasPointsMeta = [];
+
+        function toXY(idx, val) {
+          const x = padLeft + idx * stepX;
+          const y = padTop + plotH - ((val - minVal) / (maxVal - minVal)) * plotH;
+          return { x, y };
+        }
+
+        // Horizon marker band
+        const horizonIdx = Math.max(0, series.findIndex((d) => d.year === state.params.horizonYear));
+        const horizonX = toXY(horizonIdx, 0).x;
+        ctx.save();
+        ctx.strokeStyle = 'rgba(34, 211, 238, 0.35)';
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(horizonX, padTop);
+        ctx.lineTo(horizonX, padTop + plotH);
+        ctx.stroke();
+        ctx.restore();
+
+        // Draw Secondary line if present
+        if (secArr.length) {
+          ctx.save();
+          ctx.strokeStyle = '#34d399';
+          ctx.lineWidth = 2;
+          ctx.setLineDash([5, 4]);
+          ctx.beginPath();
+          secArr.forEach((val, idx) => {
+            const pt = toXY(idx, val);
+            if (idx === 0) ctx.moveTo(pt.x, pt.y);
+            else ctx.lineTo(pt.x, pt.y);
+          });
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // Draw Baseline line
+        ctx.save();
+        ctx.strokeStyle = '#64748b';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        baseArr.forEach((val, idx) => {
+          const pt = toXY(idx, val);
+          if (idx === 0) ctx.moveTo(pt.x, pt.y);
+          else ctx.lineTo(pt.x, pt.y);
+        });
+        ctx.stroke();
+        ctx.restore();
+
+        // Draw Projected area + line
+        const grad = ctx.createLinearGradient(0, padTop, 0, padTop + plotH);
+        grad.addColorStop(0, 'rgba(34, 211, 238, 0.28)');
+        grad.addColorStop(1, 'rgba(34, 211, 238, 0.01)');
+
+        ctx.save();
+        ctx.beginPath();
+        projArr.forEach((val, idx) => {
+          const pt = toXY(idx, val);
+          if (idx === 0) ctx.moveTo(pt.x, pt.y);
+          else ctx.lineTo(pt.x, pt.y);
+        });
+        ctx.lineTo(padLeft + (projArr.length - 1) * stepX, padTop + plotH);
+        ctx.lineTo(padLeft, padTop + plotH);
+        ctx.closePath();
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        ctx.strokeStyle = '#22d3ee';
+        ctx.lineWidth = 2.8;
+        ctx.beginPath();
+        projArr.forEach((val, idx) => {
+          const pt = toXY(idx, val);
+          if (idx === 0) ctx.moveTo(pt.x, pt.y);
+          else ctx.lineTo(pt.x, pt.y);
+        });
+        ctx.stroke();
+        ctx.restore();
+
+        // Data points & X-axis year labels
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        series.forEach((row, idx) => {
+          const pt = toXY(idx, projArr[idx]);
+          const isTarget = row.year === state.params.horizonYear;
+
+          ctx.fillStyle = isTarget ? '#10b981' : '#22d3ee';
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, isTarget ? 5.5 : 4, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.fillStyle = isTarget ? '#67e8f9' : '#94a3b8';
+          ctx.font = isTarget ? 'bold 11.5px "JetBrains Mono", monospace' : '11px "JetBrains Mono", monospace';
+          ctx.fillText(String(row.year), pt.x, padTop + plotH + 9);
+
+          canvasPointsMeta.push({
+            x: pt.x,
+            y: pt.y,
+            row,
+            projVal: projArr[idx],
+            baseVal: baseArr[idx],
+            formatter,
+          });
+        });
+      }
+
+      // Automated Web Speech API announcement with safe fallback
+      function announceProjection(forceToastOnly = false) {
+        const series = computeProjectionSeries();
+        const target = series.find((r) => r.year === state.params.horizonYear) || series[series.length - 1];
+
+        const speechMsg =
+          state.lang === 'km'
+            ? `ការព្យាករមហាសេរីឆ្នាំ ${target.year}៖ សមាជិក ${formatInt(target.members)} នាក់ សន្ទស្សន៍ UES ${target.ues} និងសាច់ប្រាក់ MSN Coin ${formatCompactUsd(target.msnLiquidity)}។`
+            : `Mohaserei ${target.year} projection: ${formatInt(target.members)} members, Universal Economic Score ${target.ues}, and ${formatCompactUsd(target.msnLiquidity)} MSN Coin liquidity.`;
+
+        if (!forceToastOnly && 'speechSynthesis' in window) {
+          try {
+            window.speechSynthesis.cancel();
+            const utter = new SpeechSynthesisUtterance(speechMsg);
+            utter.lang = state.lang === 'km' ? 'km-KH' : 'en-US';
+            utter.rate = 0.98;
+            utter.onerror = () => {
+              notify(speechMsg, 'cyan');
+            };
+            window.speechSynthesis.speak(utter);
+            notify(state.lang === 'km' ? 'កំពុងប្រកាសសំឡេងព្យាករ...' : 'Announcing Mohaserei projection...', 'cyan');
+            return;
+          } catch (err) {
+            // Safe fallback to visual banner notification
+          }
+        }
+        notify(speechMsg, 'cyan');
+      }
+
+      function applyPreset(presetName) {
+        const preset = PRESETS[presetName] || PRESETS.baseline;
+        state.preset = presetName;
+        state.params = { ...preset };
+        saveState();
+        applyTranslations();
+        syncSliderLabels();
+        const series = computeProjectionSeries();
+        renderAll(series);
+        if (state.autoVoice) announceProjection(false);
+      }
+
+      function bindEvents() {
+        // Language switcher
+        document.querySelectorAll('.lang-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.lang = btn.getAttribute('data-lang');
+            saveState();
+            applyTranslations();
+            renderAll(computeProjectionSeries());
+          });
+        });
+
+        // Presets
+        document.querySelectorAll('.preset-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            applyPreset(btn.getAttribute('data-preset'));
+          });
+        });
+
+        // Voice buttons
+        document.getElementById('speakNowBtn').addEventListener('click', () => announceProjection(false));
+        document.getElementById('autoVoiceBtn').addEventListener('click', () => {
+          state.autoVoice = !state.autoVoice;
+          saveState();
+          applyTranslations();
+          notify(
+            state.autoVoice
+              ? state.lang === 'km'
+                ? 'បានបើកសំឡេងស្វ័យប្រវត្តិ'
+                : 'Auto-voice announcement enabled'
+              : state.lang === 'km'
+              ? 'បានបិទសំឡេងស្វ័យប្រវត្តិ'
+              : 'Auto-voice announcement paused',
+            'emerald'
+          );
+        });
+
+        // Reset defaults
+        document.getElementById('resetDefaultsBtn').addEventListener('click', () => {
+          applyPreset('baseline');
+          notify(state.lang === 'km' ? 'បានកំណត់ប៉ារ៉ាម៉ែត្រឡើងវិញ' : 'Reset projection parameters to baseline', 'cyan');
+        });
+
+        // Sliders
+        const sliderBindings = [
+          { id: 'horizonSlider', key: 'horizonYear', parse: (v) => parseInt(v, 10) },
+          { id: 'memberGrowthSlider', key: 'memberGrowthPct', parse: (v) => parseInt(v, 10) },
+          { id: 'uesTargetSlider', key: 'uesTarget', parse: (v) => parseInt(v, 10) },
+          { id: 'hcvGrowthSlider', key: 'hcvGrowthPct', parse: (v) => parseInt(v, 10) },
+          { id: 'msnPriceSlider', key: 'msnPriceUsd', parse: (v) => parseFloat(v) },
+          { id: 'profitShareSlider', key: 'profitSharePct', parse: (v) => parseFloat(v) },
+          { id: 'marketplaceSlider', key: 'marketplaceMonthlyUsd', parse: (v) => parseInt(v, 10) },
+        ];
+
+        sliderBindings.forEach(({ id, key, parse }) => {
+          const el = document.getElementById(id);
+          el.addEventListener('input', () => {
+            state.params[key] = parse(el.value);
+            state.preset = 'baseline';
+            saveState();
+            applyTranslations();
+            syncSliderLabels();
+            renderAll(computeProjectionSeries());
+          });
+
+          el.addEventListener('change', () => {
+            if (state.autoVoice) announceProjection(false);
+          });
+        });
+
+        // Chart metric tabs
+        document.querySelectorAll('.metric-tab-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.activeMetric = btn.getAttribute('data-metric');
+            saveState();
+            renderAll(computeProjectionSeries());
+          });
+        });
+
+        // Canvas hover / tap tooltip
+        const canvas = document.getElementById('projectionCanvas');
+        const tooltip = document.getElementById('chartTooltip');
+
+        function handleCanvasPointer(clientX, clientY) {
+          if (!canvasPointsMeta.length) return;
+          const rect = canvas.getBoundingClientRect();
+          const relX = clientX - rect.left;
+
+          let nearest = canvasPointsMeta[0];
+          let minDist = Math.abs(relX - nearest.x);
+          for (const pt of canvasPointsMeta) {
+            const d = Math.abs(relX - pt.x);
+            if (d < minDist) {
+              minDist = d;
+              nearest = pt;
+            }
+          }
+
+          tooltip.innerHTML = `
+            <div class="font-bold text-cyan-300">${nearest.row.year}</div>
+            <div class="mt-1 text-white">Projected: <span class="font-semibold text-emerald-300">${nearest.formatter(nearest.projVal)}</span></div>
+            <div class="text-slate-400">Baseline: ${nearest.formatter(nearest.baseVal)}</div>
+            <div class="text-slate-300">UES: ${nearest.row.ues} · Members: ${formatInt(nearest.row.members)}</div>
+          `;
+          tooltip.style.left = `${Math.min(window.innerWidth - 220, clientX + 14)}px`;
+          tooltip.style.top = `${Math.max(12, clientY - 76)}px`;
+          tooltip.classList.remove('hidden');
+        }
+
+        canvas.addEventListener('mousemove', (e) => handleCanvasPointer(e.clientX, e.clientY));
+        canvas.addEventListener(
+          'touchstart',
+          (e) => {
+            if (e.touches && e.touches[0]) {
+              handleCanvasPointer(e.touches[0].clientX, e.touches[0].clientY);
+            }
+          },
+          { passive: true }
+        );
+        canvas.addEventListener('mouseleave', () => tooltip.classList.add('hidden'));
+
+        // Province selector
+        document.getElementById('provinceSelect').addEventListener('change', (e) => {
+          state.selectedProvinceId = e.target.value;
+          saveState();
+          renderAll(computeProjectionSeries());
+        });
+
+        // Resize redraw
+        window.addEventListener('resize', () => {
+          drawProjectionCanvas(computeProjectionSeries());
+        });
+      }
+
+      // Initialize app
+      applyTranslations();
+      syncSliderLabels();
+      renderAll(computeProjectionSeries());
+      bindEvents();
+    })();
+  </script>
+</body>
+</html>
